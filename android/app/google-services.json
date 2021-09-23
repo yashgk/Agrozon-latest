@@ -1,0 +1,64 @@
+{
+  "project_info": {
+    "project_number": "242592994117",
+    "firebase_url": "https://agrozon-11fcf-default-rtdb.firebaseio.com",
+    "project_id": "agrozon-11fcf",
+    "storage_bucket": "agrozon-11fcf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:242592994117:android:278d46a98c6cb65e53242c",
+        "android_client_info": {
+          "package_name": "com.example.agrozon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "242592994117-0fec3v2jgaol10ffab1j72gai3kqqk5g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.agrozon",
+            "certificate_hash": "b35c070bb3378e4abc10b6afa7472fb87ea6a9d7"
+          }
+        },
+        {
+          "client_id": "242592994117-9m77oeedob00aojace8f22gn8l0ngaas.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.agrozon",
+            "certificate_hash": "3ecd5dda07561b1159bf7b9338c2208d9bcc654b"
+          }
+        },
+        {
+          "client_id": "242592994117-ehgdmsaj15scor9opaqrv4ogl4lq711a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.agrozon",
+            "certificate_hash": "b395a058d72fc3a0478864b3d18ea10d8d2216f1"
+          }
+        },
+        {
+          "client_id": "242592994117-9a0h2i60eflicaobfroe7inccj26fu1q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYXihA3yKxKR5w3VNlLceyQvUg8-wfGQA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "242592994117-9a0h2i60eflicaobfroe7inccj26fu1q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

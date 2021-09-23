@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="app_name">Agrozon</string>
+    <string name="facebook_app_id">298977988591045</string>
+<string name="fb_login_protocol_scheme">fb298977988591045</string>
+</resources>

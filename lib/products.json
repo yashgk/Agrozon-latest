@@ -1,0 +1,124 @@
+{
+	"products" : {
+		"seeds":{
+			"redchilli":{
+				"productname":"red chilli 10g pack",
+				"price":"150",
+				"rating":"5",
+				"productid":"s1",
+				"description":"very spicy"
+			},
+			"greenchilli":{
+				"productname":"green chilli 10g pack",
+				"price":"100",
+				"productid":"s2",
+				"rating":"4.5",
+				"description":"very very spicy"
+			},
+			"wheat":{
+				"productname":"wheat 10g pack",
+				"price":"200",
+				"productid":"s3",
+				"rating":"3.5",
+				"description":"seasonal wheat"
+			},
+			"corn":{
+				"productname":"corn 5kg",
+				"price":"500",
+				"productid":"s4",
+				"rating":"4.0",
+				"description":"corn"
+			}
+		},
+		"hardware":{
+			"plough":{
+				"productname":"plough",
+				"price":"150",
+				"productid":"h1",
+				"rating":"5",
+				"description":"plough"
+			},
+			"sickle":{
+				"productname":"sickle",
+				"price":"100",
+				"productid":"h2",
+				"rating":"4.5",
+				"description":"sickle"
+			},
+			"sprayer":{
+				"productname":"sprayer",
+				"price":"200",
+				"productid":"h3",
+				"rating":"3.5",
+				"description":"sprayer"
+			},
+			"cutter":{
+				"productname":"cutter",
+				"price":"500",
+				"productid":"h4",
+				"rating":"4.0",
+				"description":"cutter"
+			}
+		},
+		"pestiside":{
+			"ergon":{
+				"productname":"ergon 10 kg",
+				"price":"1200",
+				"productid":"p1",
+				"rating":"5",
+				"description":"ergon"
+			},
+			"isshan":{
+				"productname":"ishan 10 kg",
+				"price":"100",
+				"productid":"p2",
+				"rating":"4.5",
+				"description":"isshan"
+			},
+			"samarth":{
+				"productname":"samarth 10g pack",
+				"price":"200",
+				"productid":"p3",
+				"rating":"3.5",
+				"description":"samarth"
+			},
+			"solix":{
+				"productname":"solix 5kg",
+				"price":"500",
+				"productid":"p4",
+				"rating":"4.0",
+				"description":"solix"
+			}
+		},
+		"fertilizer":{
+			"Ammonium Sulphate":{
+				"productname":"Ammonium Sulphate 1ltr",
+				"price":"1500",
+				"productid":"f1",
+				"rating":"5",
+				"description":"Ammonium Sulphate"
+			},
+			"Ammonium Chloride":{
+				"productname":"Ammonium Chloride",
+				"price":"1000",
+				"productid":"f2",
+				"rating":"3.5",
+				"description":"Ammonium Chloride"
+			},
+			"uria":{
+				"productname":"uria 10ltr",
+				"price":"2000",
+				"productid":"f3",
+				"rating":"3.5",
+				"description":"uria"
+			},
+			"npk":{
+				"productname":"npk 5kg",
+				"price":"5000",
+				"productid":"f4",
+				"rating":"4.0",
+				"description":"npk"
+			}
+		}
+	}
+}
