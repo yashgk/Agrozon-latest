@@ -142,10 +142,10 @@ class _ProductTileState extends State<ProductTile> {
                 AppConstant.sizer(context: context, h: 0.0, w: 0.005),
                 InkWell(
                   onTap: () async {
-                    await RealtimeDatabase.addToKart(widget.product.productId);
+                    await RealtimeDatabase.addToCart(widget.product.productId);
                     SnackBar snackBar = SnackBar(
                       content: Text(
-                        'Added to Kart.',
+                        'Added to Cart.',
                         style: TextStyle(
                             color: AppColors.whiteColor,
                             fontWeight: FontWeight.bold),
@@ -167,7 +167,7 @@ class _ProductTileState extends State<ProductTile> {
                           color: AppColors.darkGreyColor,
                         ),
                         Text(
-                          "Add To Kart",
+                          "Add To Cart",
                           style: TextStyle(
                               color: AppColors.darkGreyColor,
                               fontWeight: FontWeight.bold),

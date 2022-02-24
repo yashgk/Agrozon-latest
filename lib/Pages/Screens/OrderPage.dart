@@ -14,8 +14,8 @@ class OrderPage extends StatefulWidget {
 class _OrderPageState extends State<OrderPage> {
   List<Product> allproducts = [];
   List<Product> favouriteProds = [];
-  Map<dynamic, dynamic> kartMap = {};
-  List<Product> kartProducts = [];
+  Map<dynamic, dynamic> cartMap = {};
+  List<Product> cartProducts = [];
   List<dynamic> qty = [];
   bool deleteItem = false;
   bool noItems = false;
@@ -37,8 +37,8 @@ class _OrderPageState extends State<OrderPage> {
     setState(() {});
   }
 
-  Future<void> getKartList() async {
-    kartMap = await RealtimeDatabase.getKartList();
+  Future<void> getCartList() async {
+    cartMap = await RealtimeDatabase.getCartList();
     setState(() {});
   }
 
@@ -47,18 +47,18 @@ class _OrderPageState extends State<OrderPage> {
       isLoading = true;
     });
     await getAllProducts();
-    await getKartList();
+    await getCartList();
 
-    if (kartMap == null) {
+    if (cartMap == null) {
       setState(() {
         noItems = true;
       });
     } else {
-      qty = kartMap.values.toList();
-      kartMap.keys.forEach((kartElement) {
+      qty = cartMap.values.toList();
+      cartMap.keys.forEach((cartElement) {
         allproducts.forEach((element) {
-          if (element.productId == kartElement) {
-            kartProducts.add(element);
+          if (element.productId == cartElement) {
+            cartProducts.add(element);
           }
         });
       });
@@ -85,7 +85,7 @@ class _OrderPageState extends State<OrderPage> {
                 decoration: BoxDecoration(color: AppColors.whiteColor),
                 child: Center(
                   child: Text(
-                    "Your Kart is Empty",
+                    "Your Cart is Empty",
                     style: TextStyle(
                         color: AppColors.darkGreyColor,
                         fontWeight: FontWeight.bold,
@@ -103,7 +103,7 @@ class _OrderPageState extends State<OrderPage> {
                       height: MediaQuery.of(context).size.height * 0.68,
                       child: ListView.builder(
                           shrinkWrap: true,
-                          itemCount: kartProducts.length,
+                          itemCount: cartProducts.length,
                           itemBuilder: (context, index) {
                             return Padding(
                               padding: const EdgeInsets.symmetric(vertical: 5),
@@ -119,7 +119,7 @@ class _OrderPageState extends State<OrderPage> {
                                           borderRadius:
                                               BorderRadius.circular(10),
                                           child: Image.network(
-                                            kartProducts[index].imageUrl,
+                                            cartProducts[index].imageUrl,
                                             height: 80,
                                             width: 80,
                                           ),
@@ -135,16 +135,16 @@ class _OrderPageState extends State<OrderPage> {
                                               MainAxisAlignment.spaceAround,
                                           children: [
                                             Text(
-                                              kartProducts[index].productName,
+                                              cartProducts[index].productName,
                                               style: textStyle,
                                             ),
                                             Text(
-                                              "₹ " + kartProducts[index].price,
+                                              "₹ " + cartProducts[index].price,
                                               style: textStyle,
                                             ),
                                             Text(
                                               "Ratings : " +
-                                                  kartProducts[index].rating,
+                                                  cartProducts[index].rating,
                                               style: textStyle,
                                             )
                                           ],
@@ -166,12 +166,12 @@ class _OrderPageState extends State<OrderPage> {
                                                   if (int.parse(qty[index]) !=
                                                       30) {
                                                     await RealtimeDatabase
-                                                        .addToKart(
-                                                            kartProducts[index]
+                                                        .addToCart(
+                                                            cartProducts[index]
                                                                 .productId);
-                                                    await getKartList();
+                                                    await getCartList();
                                                     setState(() {
-                                                      qty = kartMap.values
+                                                      qty = cartMap.values
                                                           .toList();
                                                     });
                                                   }
@@ -201,33 +201,33 @@ class _OrderPageState extends State<OrderPage> {
                                                   if (int.parse(qty[index]) ==
                                                       1) {
                                                     await RealtimeDatabase
-                                                        .deleteFromKart(
-                                                            kartProducts[index]
+                                                        .deleteFromCart(
+                                                            cartProducts[index]
                                                                 .productId);
-                                                    await getKartList();
-                                                    if (kartMap == null) {
+                                                    await getCartList();
+                                                    if (cartMap == null) {
                                                       setState(() {
                                                         noItems = true;
                                                       });
                                                     }
-                                                    kartProducts.removeWhere(
+                                                    cartProducts.removeWhere(
                                                         (element) =>
                                                             element.productId ==
-                                                            kartProducts[index]
+                                                            cartProducts[index]
                                                                 .productId);
                                                   } else {
                                                     await RealtimeDatabase
-                                                        .removeFromKart(
-                                                            kartProducts[index]
+                                                        .removeFromCart(
+                                                            cartProducts[index]
                                                                 .productId);
-                                                    await getKartList();
-                                                    if (kartMap == null) {
+                                                    await getCartList();
+                                                    if (cartMap == null) {
                                                       setState(() {
                                                         noItems = true;
                                                       });
                                                     }
                                                     setState(() {
-                                                      qty = kartMap.values
+                                                      qty = cartMap.values
                                                           .toList();
                                                     });
                                                   }

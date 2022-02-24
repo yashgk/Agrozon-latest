@@ -105,30 +105,30 @@ class _AccountPageState extends State<AccountPage> {
                   },
                 ),
                 AppConstant.sizer(context: context, w: 0.0, h: 0.01),
-                CustomListTile(
-                  leading: Icons.contact_mail_outlined,
-                  title: 'Addresses',
-                  onListItemTap: () {},
-                ),
-                AppConstant.sizer(context: context, w: 0.0, h: 0.01),
-                CustomListTile(
-                  leading: Icons.shopping_bag_outlined,
-                  title: 'Orders',
-                  onListItemTap: () {},
-                ),
-                AppConstant.sizer(context: context, w: 0.0, h: 0.01),
-                CustomListTile(
-                  leading: Icons.monetization_on_outlined,
-                  title: 'Bank Details and Card Details',
-                  onListItemTap: () {},
-                ),
-                AppConstant.sizer(context: context, w: 0.0, h: 0.01),
-                CustomListTile(
-                  leading: Icons.settings_outlined,
-                  title: 'Settings',
-                  onListItemTap: () {},
-                ),
-                AppConstant.sizer(context: context, w: 0.0, h: 0.01),
+                // CustomListTile(
+                //   leading: Icons.contact_mail_outlined,
+                //   title: 'Addresses',
+                //   onListItemTap: () {},
+                // ),
+                // AppConstant.sizer(context: context, w: 0.0, h: 0.01),
+                // CustomListTile(
+                //   leading: Icons.shopping_bag_outlined,
+                //   title: 'Orders',
+                //   onListItemTap: () {},
+                // ),
+                // AppConstant.sizer(context: context, w: 0.0, h: 0.01),
+                // CustomListTile(
+                //   leading: Icons.monetization_on_outlined,
+                //   title: 'Bank Details and Card Details',
+                //   onListItemTap: () {},
+                // ),
+                // AppConstant.sizer(context: context, w: 0.0, h: 0.01),
+                // CustomListTile(
+                //   leading: Icons.settings_outlined,
+                //   title: 'Settings',
+                //   onListItemTap: () {},
+                // ),
+                // AppConstant.sizer(context: context, w: 0.0, h: 0.01),
                 Container(
                   padding: EdgeInsets.all(10),
                   decoration: BoxDecoration(

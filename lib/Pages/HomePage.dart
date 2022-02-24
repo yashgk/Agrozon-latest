@@ -1,4 +1,5 @@
 import 'package:agrozon/AppConstants/AppColors.dart';
+import 'package:agrozon/Pages/PredictionPage.dart';
 import 'package:flutter/material.dart';
 import 'package:agrozon/Pages/Screens/StorePage.dart';
 import 'package:agrozon/Pages/Screens/AccountPage.dart';
@@ -22,6 +23,7 @@ class _HomePageState extends State<HomePage> {
         OrderPage(),
         FavouritePage(),
         AccountPage(),
+        PredictionPage()
       ];
     });
   }
@@ -60,6 +62,10 @@ class _HomePageState extends State<HomePage> {
               icon: Icon(Icons.account_circle_outlined),
               label: 'Account',
               activeIcon: Icon(Icons.account_circle)),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.flare_outlined),
+              label: 'Predict',
+              activeIcon: Icon(Icons.flare)),
         ],
         currentIndex: selectedIndex,
         backgroundColor: AppColors.darkGreyColor,

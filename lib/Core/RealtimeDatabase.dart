@@ -152,92 +152,92 @@ class RealtimeDatabase {
     return favproducts;
   }
 
-  static Future<Map<dynamic, dynamic>> getKartList() async {
+  static Future<Map<dynamic, dynamic>> getCartList() async {
     await getUser();
-    DatabaseReference kartRef;
-    Map<dynamic, dynamic> kartMap = {};
-    kartRef = FirebaseDatabase.instance
+    DatabaseReference cartRef;
+    Map<dynamic, dynamic> cartMap = {};
+    cartRef = FirebaseDatabase.instance
         .reference()
         .child('users')
         .child('${user.uid}')
         .child("kart");
     print(user.uid);
-    await kartRef.once().then((DataSnapshot snapshot) {
+    await cartRef.once().then((DataSnapshot snapshot) {
       if (snapshot != null) {
-        kartMap = snapshot.value as Map;
+        cartMap = snapshot.value as Map;
       }
     });
 
-    return kartMap;
+    return cartMap;
   }
 
-  static Future<void> addToKart(String productid) async {
+  static Future<void> addToCart(String productid) async {
     await getUser();
-    DatabaseReference kartRef;
+    DatabaseReference cartRef;
 
-    Map<dynamic, dynamic> kart = {};
-    List<dynamic> kartProdList = [];
-    Map<String, dynamic> initialKart = {};
-    kartRef = FirebaseDatabase.instance
+    Map<dynamic, dynamic> cart = {};
+    List<dynamic> cartProdList = [];
+    Map<String, dynamic> initialCart = {};
+    cartRef = FirebaseDatabase.instance
         .reference()
         .child('users')
         .child('${user.uid}')
         .child("kart");
-    await kartRef.once().then((DataSnapshot snapshot) {
+    await cartRef.once().then((DataSnapshot snapshot) {
       if (snapshot != null) {
-        kart = snapshot.value;
-        if (kart != null) {
-          kartProdList = kart.keys.toList();
+        cart = snapshot.value;
+        if (cart != null) {
+          cartProdList = cart.keys.toList();
         } else {
-          initialKart = {'$productid': "1"};
-          kartRef.update(initialKart);
+          initialCart = {'$productid': "1"};
+          cartRef.update(initialCart);
         }
       }
     });
     int len = 0;
-    if (kartProdList.contains(productid)) {
-      len = int.parse(kart[productid].toString());
+    if (cartProdList.contains(productid)) {
+      len = int.parse(cart[productid].toString());
       len++;
-      await kartRef.update({'$productid': '$len'});
+      await cartRef.update({'$productid': '$len'});
     } else {
-      await kartRef.update({'$productid': '1'});
+      await cartRef.update({'$productid': '1'});
     }
   }
 
-  static Future<void> removeFromKart(String productid) async {
+  static Future<void> removeFromCart(String productid) async {
     await getUser();
-    DatabaseReference kartRef;
-    Map<dynamic, dynamic> kart = {};
-    List<dynamic> kartProdList = [];
-    kartRef = FirebaseDatabase.instance
+    DatabaseReference cartRef;
+    Map<dynamic, dynamic> cart = {};
+    List<dynamic> cartProdList = [];
+    cartRef = FirebaseDatabase.instance
         .reference()
         .child('users')
         .child('${user.uid}')
         .child("kart");
-    await kartRef.once().then((DataSnapshot snapshot) {
+    await cartRef.once().then((DataSnapshot snapshot) {
       if (snapshot != null) {
-        kart = snapshot.value;
-        kartProdList = kart.keys.toList();
+        cart = snapshot.value;
+        cartProdList = cart.keys.toList();
       }
     });
     int len = 0;
-    if (kartProdList.contains(productid)) {
-      len = int.parse(kart[productid].toString());
+    if (cartProdList.contains(productid)) {
+      len = int.parse(cart[productid].toString());
       len--;
-      await kartRef.update({'$productid': '$len'});
+      await cartRef.update({'$productid': '$len'});
     } else {
       print("not in kart");
     }
   }
 
-  static Future<void> deleteFromKart(String productid) async {
+  static Future<void> deleteFromCart(String productid) async {
     await getUser();
-    DatabaseReference kartRef;
-    kartRef = FirebaseDatabase.instance
+    DatabaseReference cartRef;
+    cartRef = FirebaseDatabase.instance
         .reference()
         .child('users')
         .child('${user.uid}')
         .child("kart");
-    kartRef.child(productid).remove();
+    cartRef.child(productid).remove();
   }
 }
